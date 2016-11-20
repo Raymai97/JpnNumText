@@ -15,6 +15,10 @@ if (!String.prototype.trim) {
 		return this;
 	}
 }
+/* String.replace only on 1st occurence so... */
+String.prototype.Replace = function(key, newKey) {
+	return this.split(key).join(newKey);
+}
 
 /* JpnNumText is static */
 var JpnNumText = {
@@ -211,22 +215,22 @@ var JpnNumText = {
 	DaijiFromKanji : function (kanji, useObsolete) {
 		var daiji = kanji.toString();
 		daiji = daiji
-		.replace("一", "壹")
-		.replace("二", "貳")
-		.replace("三", "參")
-		.replace("十", "拾");
+		.Replace("一", "壹")
+		.Replace("二", "貳")
+		.Replace("三", "參")
+		.Replace("十", "拾");
 		if (useObsolete)
 		{
 			daiji = daiji
-			.replace("四", "肆")
-			.replace("五", "伍")
-			.replace("六", "陸")
-			.replace("七", "柒")
-			.replace("八", "捌")
-			.replace("九", "玖")
-			.replace("百", "佰")
-			.replace("千", "仟")
-			.replace("万", "萬");
+			.Replace("四", "肆")
+			.Replace("五", "伍")
+			.Replace("六", "陸")
+			.Replace("七", "柒")
+			.Replace("八", "捌")
+			.Replace("九", "玖")
+			.Replace("百", "佰")
+			.Replace("千", "仟")
+			.Replace("万", "萬");
 		}
 		return daiji;
 	},
