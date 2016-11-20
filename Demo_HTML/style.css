@@ -1,0 +1,53 @@
+* { box-sizing: border-box; }
+
+body {
+	position: absolute;
+	left: 0; right: 0; top: 0;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+
+	background: #FFF;
+}
+
+body, input, select {
+	font-family: "Tahoma", "Meiryo UI", sans-serif;
+	font-size: 24px;
+}
+
+input {
+	padding: 3px 4px;
+}
+
+div._1 {
+	display: flex;
+	flex-direction: row;
+}
+
+div._1 input {
+	width: 60%;
+}
+
+div._1 select {
+	width: 40%;
+	min-width: 200px;
+}
+
+div._2 {
+	margin: 20px 20px;
+}
+
+div.output {
+	margin: 0;
+	margin-bottom: 3px;
+}
+
+input.output {
+	margin: 0;
+	margin-bottom: 20px;
+	width: 100%;
+
+	background-color: #EBEBE4;
+	border: 1px solid #ABADB3;
+}
+

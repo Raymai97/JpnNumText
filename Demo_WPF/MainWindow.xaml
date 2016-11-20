@@ -1,0 +1,84 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="TellNumInJpnWPF.MainWindow"
+	Title="Tell Number in Japanese"
+	Width="600" Height="380"
+	ResizeMode="CanResize"
+    Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="12pt"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="IsReadOnlyCaretVisible" Value="True"/>
+            <Style.Triggers>
+                <Trigger Property="IsReadOnly" Value="True">
+                    <Setter Property="Background" Value="{Binding Source=DontKnow}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type Label}" BasedOn="{StaticResource BaseStyle}"/>
+        <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource BaseStyle}"/>
+        <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource BaseStyle}"/>
+
+    </Window.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid Margin="3" MinWidth="400">
+            <StackPanel>
+                <Grid HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox
+					    x:Name="txtInput"
+                        TextChanged="txtInput_TextChanged"
+                        Grid.Column="0"
+                        Margin="3,3"/>
+                    <ComboBox
+                        x:Name="cboDaiji"
+                        SelectionChanged="cboDaiji_SelectionChanged"
+                        Grid.Column="1"
+                        Margin="3,3"
+                        SelectedIndex="0">
+                        <ComboBoxItem x:Name="cbiDontUseDaiji" Content="Don't use 大字"/>
+                        <ComboBoxItem x:Name="cbiUseCurrentDaiji" Content="Use current 大字"/>
+                        <ComboBoxItem x:Name="cbiUseObsoleteDaiji" Content="Use obsolete 大字"/>
+                    </ComboBox>
+                </Grid>
+                <StackPanel Margin="10">
+                    <Label
+						Content="Kanji 漢字："/>
+                    <TextBox
+						x:Name="txtKanji"
+						IsReadOnly="True"
+						Margin="0,0,0,10"/>
+                    <Label
+						Content="Hiragana ひらがな："/>
+                    <TextBox
+						x:Name="txtHiragana"
+						IsReadOnly="True"
+						Margin="0,0,0,10"/>
+                    <Label
+						Content="Romaji ローマ字："/>
+                    <TextBox
+						x:Name="txtRomaji"
+						IsReadOnly="True"
+						Margin="0,0,0,10"/>
+                    <CheckBox
+						x:Name="chkUseSpace"
+                        Checked="chkUseSpace_CheckStateChanged"
+                        Unchecked="chkUseSpace_CheckStateChanged"
+						Margin="10,10"
+						Content="Separate hiragana and romaji with space"
+                        IsChecked="True"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+
+</Window>
