@@ -43,7 +43,7 @@ namespace MaiSoft
 					ch == 'せ' ? "se" : ch == 'ぜ' ? "ze" :
 					ch == 'そ' ? "so" : ch == 'ぞ' ? "zo" :
 					ch == 'た' ? "ta" : ch == 'だ' ? "da" :
-					ch == 'ち' ? "chi" : ch == 'だ' ? "dzi" :
+					ch == 'ち' ? "chi" : ch == 'ぢ' ? "dzi" :
 					ch == 'つ' ? "tsu" : ch == 'づ' ? "dzu" :
 					ch == 'て' ? "te" : ch == 'で' ? "de" :
 					ch == 'と' ? "to" : ch == 'ど' ? "do" :
