@@ -1,4 +1,4 @@
-/* JpnNumText 2016.11.20
+/* JpnNumText 2016.11.26
  * Coded by Raymai97
  * Ported from C# for modern JS
  */
@@ -55,7 +55,7 @@ var JpnNumText = {
 				ch == 'せ' ? "se" : ch == 'ぜ' ? "ze" :
 				ch == 'そ' ? "so" : ch == 'ぞ' ? "zo" :
 				ch == 'た' ? "ta" : ch == 'だ' ? "da" :
-				ch == 'ち' ? "chi" : ch == 'だ' ? "dzi" :
+				ch == 'ち' ? "chi" : ch == 'ぢ' ? "dzi" :
 				ch == 'つ' ? "tsu" : ch == 'づ' ? "dzu" :
 				ch == 'て' ? "te" : ch == 'で' ? "de" :
 				ch == 'と' ? "to" : ch == 'ど' ? "do" :
