@@ -1,4 +1,4 @@
-/* JpnNumText 2016.11.20
+/* JpnNumText 2016.11.26
  * Coded by Raymai97
  * Ported from C# for modern JS
  */
